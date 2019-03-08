@@ -223,7 +223,7 @@ $(".calcButton").click(function(event) {
 	}
 })
 
-// do the math for our calculator
+// Do the math for our calculator
 function evaluateExpression(first,op,second) {
 	output = 0;
 	if (op == "+") {
