@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>
+			Calculator Demo
+		</title>
+
+		<link rel="stylesheet" href="calculator.css" type="text/css">
+
+	</head>
+	<h2> CSCI 4849 Assignment 6 - Switch Control</h2>
+	<h3> Allison Rodenbaugh </h3>
+	<p><i> On your keyboard, use the arrow keys or the left/right shift keys to navigate, and the enter or space bar to select.</i></p>
+	<body>
+		<table>
+			<tr><td>
+			<div id="calculator">
+				<h1>calc U l8r</h1>
+				<div class="calculator_row">
+					<input id="number_input">
+				</div>
+				<div class="calculator_row">
+					<button id="button7" class="calcButton row1 col1">7</button>
+					<button id="button8" class="calcButton row1 col2">8</button>
+					<button id="button9" class="calcButton row1 col3">9</button>
+					<button id="buttonDivide" class="calcButton row1 col4 function">/</button>
+				</div>
+				<div class="calculator_row">
+					<button id="button4" class="calcButton row2 col1">4</button>
+					<button id="button5" class="calcButton row2 col2">5</button>
+					<button id="button6" class="calcButton row2 col3">6</button>
+					<button id="buttonMultiply" class="calcButton row2 col4 function">*</button>
+				</div>
+				<div class="calculator_row">
+					<button id="button1" class="calcButton row3 col1">1</button>
+					<button id="button2" class="calcButton row3 col2">2</button>
+					<button id="button3" class="calcButton row3 col3">3</button>
+					<button id="buttonAdd" class="calcButton row3 col4 function">+</button>
+				</div>
+				<div class="calculator_row">
+					<button id="button0" class="calcButton row4 col1">0</button>
+					<button id="buttonClear" class="calcButton row4 col2 meta">C</button>
+					<button id="buttonEquals" class="calcButton row4 col3 meta">=</button>
+					<button id="buttonSubtract" class="calcButton row4 col4 function">-</button>
+				</div>
+			</div>
+		</td>
+		<td style="padding-left: 100px;">
+			<table>
+			<tr><td></td><td style="text-align: center;"><button onclick="selectUp()" class="arrow" id="up" style="padding: 30px 100px 30px 100px;"> UP </button></td><td></td></tr>
+			<tr><td><button onclick="selectPrevious();"class="arrow" id="left">LEFT</button></td><td><button onclick="clickSelectedItem();"class="select" id="select"> SELECT </button></td><td><button onclick="selectNext();" class="arrow" id="right">RIGHT</button></td></tr>
+			<tr><td></td><td><button onclick="selectDown();" class="arrow" style="padding: 30px 29px 30px 29px;" id="down"> DOWN </button></td><td></td></tr>
+
+		<tr><td>
+		</table>
+
+		</table>
+	</body>
+	<div id="comments">
+		<h2>About this app</h2>
+		<p>
+			This calculator application is complete with different types of Switch Controls.
+		The first is 5 switch control using the arrow keys to navigate and the enter button to select.
+		The application also has 3 switch control where the user can navigate to previous and next buttons using the left and right shift buttons, and select using the
+		space bar. The user could use a combination of the arrow keys & shift keys & enter/space bar to use the calculator, but for the purposes of testing the 3 key vs 5
+		key control application, the space bar will be used with the shift keys and the enter key will be used with the arrow keys. There is also the option to use the mouse
+	 	to click on the large navigation buttons to the right of the calculator.</p>
+		<h2>Instructions</h2>
+		<p>
+			One way you can navigate the calculator is by using the large buttons shown on the screen to account
+			for slightly inaccurate mouse movements. Alternatively, you can navigate
+			 the calculator using the arrow keys on your keyboard and the enter button as the select button (5 switch control). In case the arrow keys are too close together (causing inaccurate
+			 button selection) the application also has 3 switch control,
+				where the left shift corresponds to the LEFT button (Select Previous) and the right shift corresponds to the RIGHT botton (Select Next) and the space bar corresponds to the select button.
+
+		</p>
+		<h2>Test Description / Results</h2>
+		<p>
+			I tested my application by comparing the two different versions of my interface (3-key and 5-key). I completed two trials of five different equations (shown below) and
+			recorded the time it took to complete the equations using the two different methods. After completing the testing, I found that I was more accurate in navigating the calculator when using the
+			3 switch control (consisting of the left and right shift keys and the space bar). I only made one unintended key press because I accidentally hit the select button twice.
+			 However, given that theys keys were more spaced out, it was nearly impossible to not select the intended
+			button, though the 3 key method was notably slower. When using the 5 switch control (the arrow keys for navigation and the enter key for select), I found that it was more likely to select the unintended
+			arrow key because of their close proximity. For someone who may have to use a fist or larger object to nagivate the calculator, it would be difficult to select the arrow keys accurately.
+			However, the 5 switch control did prove to be much faster than 3 switch control as I could quickly complete the equations using my index finger. I believe that
+			the three button control would allow someone to accurately use their fist/large object to navigate the calculator, eventhough it would be much slower since it only has "Select Next" and
+			"Select Previous" functionality. After completing my test, the data demonstrated that using the 5 key control was faster, but using the 3 key control was more accurate.
+			However, depending on the limitations of the user, one of the methods may be preferable to the other.
+		</p>
+
+		<h3> Test Protocol </h3>
+		<p> Two trials of each of the following equations were completed using the two different switch controls (5 key vs 3 key).<p>
+		<ul>
+			<li> 823 / 6 = </li>
+			<li> 6 * 95 + 44 = </li>
+			<li> 30 - 14 clear </li>
+			<li> 221 + 3 * 6 = </li>
+			<li> 430 clear</li>
+		</ul>
+
+		<h3> Data Collection </h3>
+		<table id="trial" border="1px;">
+	  <tr>
+	    <th>Equation # : Trial #</th>
+	    <th>5 Switch</th>
+	    <th>3 Switch</th>
+	  </tr>
+	  <tr>
+	    <td>1:1</td>
+	    <td>8.06 seconds</td>
+	    <td>13.78 seconds</td>
+	  </tr>
+	  <tr>
+	    <td>1:2</td>
+	    <td>8.94 seconds</td>
+	    <td>12.19 seconds</td>
+	  </tr>
+		<tr>
+			<td>1:3</td>
+			<td>8.03 seconds</td>
+			<td>10.9 seconds</td>
+		</tr>
+	  <tr>
+	    <td>2:1</td>
+	    <td>11.35 seconds</td>
+	    <td>23.75 seconds - double-click error & redo</td>
+	  </tr>
+	  <tr>
+	    <td>2:2</td>
+	    <td>10.35 seconds</td>
+	    <td>14.55 seconds</td>
+	  </tr>
+		<tr>
+			<td>2:3</td>
+			<td>9.91 seconds</td>
+			<td>16.19 seconds</td>
+		</tr>
+	  <tr>
+	    <td>3:1</td>
+	    <td>10.06 seconds</td>
+	    <td>15.48 seconds</td>
+	  </tr>
+	  <tr>
+	    <td>3:2</td>
+	    <td>9.55 seconds</td>
+	    <td>9.98 seconds</td>
+	  </tr>
+		<tr>
+			<td>3:3</td>
+			<td>10.04 seconds</td>
+			<td>11.11 seconds</td>
+		</tr>
+		<tr>
+			<td>4:1</td>
+			<td>11.06 seconds</td>
+			<td>18.45 seconds</td>
+		</tr>
+		<tr>
+			<td>4 : 2</td>
+			<td>21.44 seconds - incorrect click error & redo</td>
+			<td>10.93 seconds</td>
+		</tr>
+		<tr>
+			<td>4 : 3</td>
+			<td>11.94 seconds</td>
+			<td>15.79 seconds</td>
+		</tr>
+		<tr>
+			<td>5 : 1</td>
+			<td>6.30 seconds</td>
+			<td>5.27 seconds</td>
+		</tr>
+		<tr>
+			<td>5 : 2</td>
+			<td>4.98 seconds</td>
+			<td>5.56 seconds</td>
+		</tr>
+		<tr>
+			<td>5 : 3</td>
+			<td>5.12 seconds</td>
+			<td>6.70 seconds</td>
+		</tr>
+		<tr>
+			<td><b>Average time for a trial</b></td>
+			<td><b>9.8 seconds</b></td>
+			<td><b>12.7 seconds</b></td>
+		</tr>
+	</table>
+
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" type="text/javascript"></script>
+<script src="calculator.js" type="text/javascript"></script>
+</html>
